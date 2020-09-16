@@ -1,0 +1,10 @@
+<div class="github-finder">
+    <h1>Github API</h1>
+    <form 
+        novalidate
+        (ngSubmit)="onUserSubmitForm()" [formGroup]="searcherFormGroup">
+        <p>Usuario</p>
+        <input type="text" formControlName="username">
+        <input type="submit" value="Buscar">
+    </form>
+</div>
