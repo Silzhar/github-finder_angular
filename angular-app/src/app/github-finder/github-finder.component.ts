@@ -12,6 +12,8 @@ export class GithubFinderComponent implements OnInit {
 
     public submitted: boolean = false;
 
+    public repos: any[] = [];
+
     constructor(private fb: FormBuilder, private service: GithubService) {
         this.searcherFormGroup = this.fb.group({
             username: new FormControl('Silzhar', [Validators.required, Validators.maxLength(20)])
@@ -33,6 +35,8 @@ export class GithubFinderComponent implements OnInit {
             const miObservable = this.service.peticionRepositorios(username);
             miObservable.subscribe((data) => {
                 console.log(data);
+                // Para evitar arrays aninados no hago push,lo asigno directamente.
+                this.repos = data;
             });
 
             // Reseteamos todos los campos y el indicador de envío

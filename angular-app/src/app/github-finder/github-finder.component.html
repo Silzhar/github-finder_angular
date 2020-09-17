@@ -8,3 +8,12 @@
         <input type="submit" value="Buscar">
     </form>
 </div>
+
+<div class="repository" *ngFor="let repo of repos">
+    <ul>
+        <li>Nombre: {{ repo.name }}</li>
+        <li>Descripción: {{ repo.description }}</li>
+        <li>URL: {{ repo.url }}</li>
+    </ul>
+
+</div>
